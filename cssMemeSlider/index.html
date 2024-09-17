@@ -4,28 +4,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Simple Slider</title>
   </head>
   <body>
-    <div class="container">
-      <div class="slider-controls">
-        <input type="radio" name="slider" id="slide1" checked />
-        <label for="slide1"></label>
-        <input type="radio" name="slider" id="slide2" />
-        <label for="slide2"></label>
-        <input type="radio" name="slider" id="slide3" />
-        <label for="slide3"></label>
-        <input type="radio" name="slider" id="slide4" />
-        <label for="slide4"></label>
-        <input type="radio" name="slider" id="slide5" />
-        <label for="slide5"></label>
+    <div class="slider-container">
+      <!-- Images -->
+      <div class="slides">
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1682685796014-2f342188a635" alt="Image 1" />
+          <p class="caption">Caption 1</p>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1682685797661-9e0c87f59c60" alt="Image 2" />
+          <p class="caption">Caption 2</p>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1682687219800-bba120d709c5" alt="Image 3" />
+          <p class="caption">Caption 3</p>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1682687221038-404cb8830901" alt="Image 4" />
+          <p class="caption">Caption 4</p>
+        </div>
+        <div class="slide">
+          <img src="https://images.unsplash.com/photo-1682687220923-c58b9a4592ae" alt="Image 5" />
+          <p class="caption">Caption 5</p>
+        </div>
       </div>
-      <div class="slider">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1682685796014-2f342188a635" alt="Slide 1">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1682685797661-9e0c87f59c60" alt="Slide 2">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1682687219800-bba120d709c5" alt="Slide 3">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1682687221038-404cb8830901" alt="Slide 4">
-        <img class="slider-image" src="https://images.unsplash.com/photo-1682687220923-c58b9a4592ae" alt="Slide 5">
+      <div>
+        <!-- Navigation -->
+        <input type="radio" name="slider" id="slide1" checked />
+        <input type="radio" name="slider" id="slide2" />
+        <input type="radio" name="slider" id="slide3" />
+        <input type="radio" name="slider" id="slide4" />
+        <input type="radio" name="slider" id="slide5" />
+      </div>
     </div>
   </body>
 </html>
