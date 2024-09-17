@@ -1,5 +1,4 @@
 body {
-  background-color: #25282a;
   margin: 0;
   padding: 0;
   display: flex;
@@ -7,13 +6,23 @@ body {
   align-items: center;
   min-height: 100vh;
   font-family: Arial, sans-serif;
+  background-color: #1a1a1a;
 }
 
+.container {
+  padding: 40px;
+  padding: 30px 0;
+  background-color: #25282a;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px;
+}
 .slider-container {
   max-width: 800px;
   width: 100%;
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
 }
 
 .slides {
@@ -27,14 +36,16 @@ body {
 }
 
 .slide img {
+  max-height: 400px;
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover;
 }
 
 .navigation {
   display: flex;
   justify-content: center;
+  order: 2;
 }
 
 .navigation label {
@@ -42,13 +53,28 @@ body {
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background-color: #bbb;
+  border: 1px solid #09a3fc;
+  background-color: #09a3fc;
   margin: 0 5px;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .navigation label:hover {
-  background-color: #717171;
+  background-color: #fff !important;
+  border: 1px solid #fff !important;
+}
+
+input[type='radio']:checked ~ .label-container .navigation label {
+  background-color: #09a3fc;
+  border-color: #09a3fc;
+}
+
+#slide1:checked ~ .label-container .navigation label[for='slide1'],
+#slide2:checked ~ .label-container .navigation label[for='slide2'],
+#slide3:checked ~ .label-container .navigation label[for='slide3'],
+#slide4:checked ~ .label-container .navigation label[for='slide4'],
+#slide5:checked ~ .label-container .navigation label[for='slide5'] {
+  background-color: transparent;
 }
 
 input[type='radio'] {
@@ -75,32 +101,20 @@ input[type='radio'] {
   transform: translateX(-400%);
 }
 
-#slide1:checked ~ .navigation label:nth-child(1),
-#slide2:checked ~ .navigation label:nth-child(2),
-#slide3:checked ~ .navigation label:nth-child(3),
-#slide4:checked ~ .navigation label:nth-child(4),
-#slide5:checked ~ .navigation label:nth-child(5) {
-  background-color: #717171;
-}
-
 .label-container {
+  border-radius: 15px;
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
   align-items: center;
   background: #333;
-  padding: 10px;
+  padding: 20px;
   border-radius: 5px;
-}
-
-.text {
-  flex-grow: 1;
-  text-align: center;
-  overflow: hidden;
-  height: 30px;
+  gap: 20px;
 }
 
 .text-slider {
+  order: 1;
   overflow: hidden;
   width: 100%;
 }
@@ -112,12 +126,11 @@ input[type='radio'] {
 
 .text-slides p {
   min-width: 100%;
-  text-align: center;
+  text-align: left;
   color: white;
   font-size: 15px;
   font-weight: bold;
   margin: 0;
-  padding: 10px 0;
 }
 
 #slide1:checked ~ .label-container .text-slider .text-slides {
@@ -138,4 +151,18 @@ input[type='radio'] {
 
 #slide5:checked ~ .label-container .text-slider .text-slides {
   transform: translateX(-400%);
+}
+
+@media (max-width: 768px) {
+  .label-container {
+    flex-direction: column;
+  }
+
+  .navigation {
+    order: 1;
+  }
+
+  .text-slider {
+    order: 2;
+  }
 }
