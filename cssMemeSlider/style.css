@@ -49,30 +49,42 @@ body {
 
 .navigation label {
   cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navigation label .dot {
   height: 0.625rem;
   width: 0.625rem;
   border-radius: 50%;
   border: 0.0625rem solid #09a3fc;
   background-color: #09a3fc;
-  margin: 0 0.3125rem;
   transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.navigation label:hover {
-  background-color: #fff !important;
-  border: 0.0625rem solid #fff !important;
+.navigation label:hover .dot {
+  background-color: #fff;
+  border-color: #fff;
 }
 
-input[type='radio']:checked ~ .label-container .navigation label {
+.navigation label:hover .dot {
+  background-color: #fff !important;
+  border-color: #fff !important;
+  transform: scale(1.2);
+}
+
+input[type='radio']:checked ~ .label-container .navigation label .dot {
   background-color: #09a3fc;
   border-color: #09a3fc;
 }
 
-#slide1:checked ~ .label-container .navigation label[for='slide1'],
-#slide2:checked ~ .label-container .navigation label[for='slide2'],
-#slide3:checked ~ .label-container .navigation label[for='slide3'],
-#slide4:checked ~ .label-container .navigation label[for='slide4'],
-#slide5:checked ~ .label-container .navigation label[for='slide5'] {
+#slide1:checked ~ .label-container .navigation label[for='slide1'] .dot,
+#slide2:checked ~ .label-container .navigation label[for='slide2'] .dot,
+#slide3:checked ~ .label-container .navigation label[for='slide3'] .dot,
+#slide4:checked ~ .label-container .navigation label[for='slide4'] .dot,
+#slide5:checked ~ .label-container .navigation label[for='slide5'] .dot {
   background-color: transparent;
 }
 
