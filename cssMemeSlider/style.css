@@ -40,6 +40,7 @@ body {
   height: auto;
   object-fit: cover;
 }
+
 .navigation {
   display: flex;
   justify-content: center;
@@ -48,38 +49,31 @@ body {
 
 .navigation label {
   cursor: pointer;
-  height: 2rem;
-  width: 2rem;
-  border-radius: 50%;
-  margin: 0 0.3125rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navigation label .dot {
   height: 0.625rem;
   width: 0.625rem;
   border-radius: 50%;
+  border: 0.0625rem solid #09a3fc;
   background-color: #09a3fc;
-  transition: background-color 0.3s ease;
+  margin: 0 0.3125rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
-.navigation label:hover .dot {
-  background-color: #fff;
+.navigation label:hover {
+  background-color: #fff !important;
+  border: 0.0625rem solid #fff !important;
 }
 
-input[type='radio']:checked ~ .label-container .navigation label .dot {
+input[type='radio']:checked ~ .label-container .navigation label {
   background-color: #09a3fc;
+  border-color: #09a3fc;
 }
 
-#slide1:checked ~ .label-container .navigation label[for='slide1'] .dot,
-#slide2:checked ~ .label-container .navigation label[for='slide2'] .dot,
-#slide3:checked ~ .label-container .navigation label[for='slide3'] .dot,
-#slide4:checked ~ .label-container .navigation label[for='slide4'] .dot,
-#slide5:checked ~ .label-container .navigation label[for='slide5'] .dot {
+#slide1:checked ~ .label-container .navigation label[for='slide1'],
+#slide2:checked ~ .label-container .navigation label[for='slide2'],
+#slide3:checked ~ .label-container .navigation label[for='slide3'],
+#slide4:checked ~ .label-container .navigation label[for='slide4'],
+#slide5:checked ~ .label-container .navigation label[for='slide5'] {
   background-color: transparent;
-  border: 0.125em solid #09a3fc;
 }
 
 input[type='radio'] {
